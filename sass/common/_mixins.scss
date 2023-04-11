@@ -1,0 +1,11 @@
+@function set-vw-width($element-width, $total-width: 1920) {
+    @return ($element-width / $total-width) * 100vw;
+}
+
+@mixin vw-width($element-width, $total-width: 1920) {
+    width: set-vw-width($element-width, $total-width: 1920);
+}
+
+@function set-vh-height($element-height, $total-height: 1080) {
+    @return ($element-height / $total-height) * 100vh;
+}

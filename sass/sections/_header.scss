@@ -1,0 +1,185 @@
+@use '../common/mixins' as *;
+@use '../common/variables' as *;
+
+.homepage {
+    header {
+        background: url(/SVG/banner.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+        max-width: set-vw-width(1920);
+        height: 94.4rem;
+        margin: auto;
+        margin-bottom: 11rem;
+        border: solid 1px;
+        position: relative;
+
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            max-width: set-vw-width(1730);
+        }
+    }
+    
+    .top-bar {
+        display: flex;
+        align-items: center;
+        gap: 6.1rem;
+        margin: 3.7rem auto 12.5rem;
+        max-width: set-vw-width(1540);
+        // max-width: 154rem;
+
+        .logo {
+            width: 12rem;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            flex: 1;
+            
+            span {
+                transition: all .75s ease-in-out;
+                
+            }
+
+            // * ANIMATION 
+    
+            &.active .menu-btn .menu-btn__burger {
+                transform: translateX(-50px);
+                background: inherit;
+            }
+                
+            &.active .menu-btn .menu-btn__burger::before {
+                transform: rotate(45deg) translate(35px, -35px);
+            }
+            &.active .menu-btn .menu-btn__burger::after {
+                transform: rotate(-45deg) translate(35px, 35px);
+            }
+            &.active span {
+                transition: all .75s ease-in-out;
+            }
+        }
+
+        .menu-btn {
+            display: flex;
+            z-index: 1000;
+            width: 20px;
+    
+            .menu-btn__burger {
+                width: 20px;
+                height: 3px;
+                background: rgb(255, 255, 255);
+                border-radius: 5px;
+                transition: all .75s ease-in-out;
+                cursor: pointer;
+            }
+    
+            .menu-btn__burger::before,
+            .menu-btn__burger::after {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 3px;
+                background: rgb(255, 255, 255);
+                border-radius: 5px;
+                transition: all .75s ease-in-out;
+            }
+    
+            .menu-btn__burger::before {
+                transform: translateY(-6px);
+            }
+            .menu-btn__burger::after {
+                transform: translateY(6px);
+            }
+
+
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+
+            p {
+                margin-left: 1.1rem;
+            }
+        }
+    }
+
+    .header-content {
+        display: flex;
+        margin: auto;
+        @include vw-width(1540);
+
+        .header-items {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .header-items:last-of-type {
+            width: fit-content;
+
+        }
+
+        .header-titre {
+            flex: 0 1 set-vw-width(615);
+
+            @media only screen and (max-width: 1640px) {
+                flex: auto;
+            }
+
+        }
+
+
+        .header-text {
+            margin: 6.2rem 0 5.8rem;
+            flex: 0 1 set-vw-width(615);
+
+            @media only screen and (max-width: 1640px) {
+                flex: auto;
+            }
+
+            span {
+                display: block;
+            }
+        }
+
+        .header-links {
+            flex: 0 1 set-vw-width(615);
+            display: flex;
+            // flex-wrap: wrap;
+            // gap: 2.3rem;
+            
+            p {
+                transition: background-color 0.3s ease-in-out;
+                padding: 2.2rem 3rem;
+                border-radius: .7rem;
+                white-space: nowrap;
+                margin-right: set-vw-width(23);
+            }
+        }
+
+        .redirect-button {
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+            gap: 1.7rem;
+            border-top-left-radius: .7rem;
+            border-bottom-left-radius: .7rem;
+            padding: 1.8rem 3.5rem 1.8rem 2.6rem;
+
+            @media only screen and (max-width: 768px) {
+                top: 13rem;
+            }
+
+            a {
+                text-align: left;
+            }
+
+            span {
+                display: block;
+                white-space: nowrap;
+            }
+        }
+    }
+}

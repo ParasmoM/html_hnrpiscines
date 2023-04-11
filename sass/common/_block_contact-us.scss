@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+.homepage {
+    .contact-us {
+        background: url(/SVG/bg-sec2.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        max-width: set-vw-width(1920);
+        height: 55rem;
+    }
+
+    .contact-titre {
+        padding-top: 14.3rem;
+        width: set-vw-width(780);
+        margin: auto;
+
+        @media only screen and (min-width: 1640px) and (max-width: 1920px) {
+            width: set-vw-width(840);
+        }
+        @media only screen and (min-width: 1440px) and (max-width: 1640px) {
+            width: set-vw-width(900);
+        }
+        @media only screen and (min-width: 1240px) and (max-width: 1440px) {
+            width: set-vw-width(1000);
+        }
+        @media only screen and (max-width: 1240px) {
+            width: 70%;
+        }
+    }
+
+    .contact-button {
+        background-color: $color-heating;
+        border-radius: .7rem;
+        padding: 2.2rem 3.8rem;
+        margin: 4rem 0 11rem;
+    }
+}

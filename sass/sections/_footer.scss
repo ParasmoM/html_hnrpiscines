@@ -1,0 +1,83 @@
+@use '../common/variables' as *;
+@use '../common/mixins' as *;
+.footer {
+    .footer-wrap {
+        display: flex;
+        @include vw-width(1540);
+        margin: auto;
+
+        > div {
+            flex: 1;
+            padding-left: 5px;
+            margin-top: 10rem;
+        }
+    }
+}
+
+.footer-about {
+    &-logo {
+        width: set-vw-width(145);
+    }
+
+    p {
+        width: set-vw-width(310);
+        margin: 3rem 0;
+    }
+
+    .footer-about-socials {
+        display: flex;
+        gap: 2.2rem;
+        margin-bottom: 9.4rem;
+    }
+}
+
+.footer-address {
+    h3 {
+        margin-bottom: 2rem;
+    }
+
+    .footer-email {
+        margin-bottom: 2.8rem;
+    }
+
+    p:nth-of-type(5) {
+        width: set-vw-width(255);
+    }
+}
+
+.footer-button-wrap {
+    display: inline-flex;
+    flex-flow: column;
+    gap: 1.7rem;
+
+    h3 {
+        margin-bottom: 1rem;
+    }
+    
+    button {
+        background-color: $color-text;
+        padding: 2.3rem 2.8rem;
+        border-radius: .7rem;
+        width: fit-content;
+    }
+}
+
+.footer-copy {
+    background-color: $color-bg-grey;
+    
+    > div {
+        @include vw-width(1540);
+        margin: auto;
+        display: flex;
+        gap: 1.5rem;
+        padding: 4rem 0;
+    }
+
+    p:first-of-type {
+        flex: auto;
+    }
+
+    img {
+        width: set-vw-width(100);
+    }
+}
